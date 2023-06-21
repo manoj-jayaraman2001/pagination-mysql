@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>My Pagination API</title>
+
+    <style>
+      body {
+        height: 100%;
+        font-family: 'karla', sans-serif;
+        margin: 0;
+        padding: 2%;
+        background-color: whitesmoke;
+      }
+      h1 {
+        width: fit-content;
+        margin: 0 auto;
+        font-size: 28px;
+        color: #ef233c;
+      }
+      .main {
+        width: 60%;
+        margin: 5% auto 0 auto; 
+        font-size: 18.5px;
+    
+      }
+      .code-block{
+        padding: 4px 8px;
+        background: black;
+        border-radius: 8px;
+        width: 100%;
+        margin: 5% auto 0 auto; 
+      }
+       #api-url, #json-data p{
+        color: white;
+        font-size: 13.5px;
+      }
+      .code-block{
+        max-height: 300px;
+        overflow: auto;
+      }
+      .inputs{
+        margin: 5% auto 0 auto;
+        width: fit-content;
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+      }
+      .inputs > input{
+        padding: 4px;
+        border-radius: 6px;
+        font-size: 16.5px;
+      }
+      button{
+        padding: 6px 12px;
+        background-color: #ef233c;
+        color: white;
+        font-size: 16.5px;
+        cursor: pointer;
+        border: none;
+        border-radius: 8px;
+      }
+      button:hover{
+        background-color: #666df1;
+        transition: 0.5s ease-in-out;
+      }
+      button:active{
+        transform: translateY(3px);
+      }
+      #Note{
+        font-size: 16px;
+      }
+      @media(max-width: 860px){
+        .main{
+          width: 80%;
+        }
+      }
+
+      @media(max-width: 748px){
+        .main{
+          width: 95%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+    <h1>Pagination API using MySql, Node and Express</h1>
+
+    <div class="main">
+      <p>
+        I have developed a pagination API using MySQL. It includes optional
+        parameters for limit and offset, with default values of 10 and 0
+        respectively. If the parameters are not specified or are invalid, the
+        API seamlessly falls back to the default values, ensuring reliable
+        pagination behavior.
+      </p>
+      <div class = "code-block">
+        <p id="api-url"></p>
+      </div>
+      <div class = 'inputs'>
+        <input type="text" placeholder="limit" id="limit">
+        <input type="text" placeholder="offset" id="offset">
+        <button id="generate">Fetch Data</button>
+      </div>
+      <p id = "Note"><strong>Note: </strong>Maximum orders are 40, Incase of invalid values for offset and limit such as string, float, negative values or value that exceeds total values, default vales are taken(limit = 10 and offset = 0) </p>
+      <div class="code-block">
+        <div id="json-data"></div>
+      </div>
+    </div>
+    <script src="./client.js"></script>
+  </body>
+</html>
