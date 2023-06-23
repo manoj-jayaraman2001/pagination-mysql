@@ -69,6 +69,8 @@ app.get("/api/orders", async (req, res) => {
 
 app.use(express.static('public'));
 
+
+
 app.get('*', (req, res) => {
   res.status(404).json({ error: '404! Not Found' });
 })
