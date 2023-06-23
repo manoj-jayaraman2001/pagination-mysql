@@ -1,6 +1,10 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
+require('dotenv').config();
+
+
+
 const port = process.env.PORT || 8080;
 
 // Parse JSON bodies (as sent by API clients)
