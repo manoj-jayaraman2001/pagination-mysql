@@ -4,7 +4,6 @@
   "description": "��#\u0000 \u0000t\u0000e\u0000m\u0000p\u0000l\u0000a\u0000t\u0000e\u0000-\u0000m\u0000y\u0000s\u0000q\u0000l\u0000-\u0000b\u0000a\u0000c\u0000k\u0000e\u0000n\u0000d\u0000-\u0000b\u0000o\u0000i\u0000l\u0000e\u0000r\u0000p\u0000l\u0000a\u0000t\u0000e\u0000\r\u0000 \u0000",
   "main": "index.js",
   "scripts": {
-    "predeploy": "node ./src/createDatabase.js",
     "start": "node ./src/index.js"
   },
   "author": "Manoj Jayaraman",
