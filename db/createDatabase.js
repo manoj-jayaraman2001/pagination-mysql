@@ -26,13 +26,7 @@ let a = async (data, con, err) => {
                 })
             })
     }
-    let [error, result] = await new Promise((resolve, reject) => {
-        con.query('SELECT * FROM orders', (err) => {
-            if (err) reject([err, undefined])
-            else resolve([undefined, data])
-        })
-    })
-    if (error) { console.log(er) }
+    
 
 }
 
