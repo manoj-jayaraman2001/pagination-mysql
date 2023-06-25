@@ -77,6 +77,12 @@
       #Note{
         font-size: 16px;
       }
+      #default-data-msg{
+        color: red;
+        font-size: 13px;
+        display: none;
+        
+      }
       @media(max-width: 860px){
         .main{
           width: 80%;
@@ -110,6 +116,8 @@
         <button id="generate">Fetch Data</button>
       </div>
       <p id = "Note"><strong>Note: </strong>Maximum orders are 40, Incase of invalid values for offset and limit such as string, float, negative values or value that exceeds total values, default vales are taken(limit = 10 and offset = 0) </p>
+      <p id="default-data-msg">invalid limit and offset, default value is taken</p>
+      <p style="font-weight: 700; margin: 0;">Response:</p>
       <div class="code-block">
         <div id="json-data"></div>
       </div>
