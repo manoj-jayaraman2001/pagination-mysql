@@ -30,17 +30,20 @@ async function executeQuery(sql, values) {
 }
 
 const maxLimit = 40 // Total Number of orders
+
+
 // validate limit and offset values
 function validate(limit, offset){
-
+  //avoiding empty values
   if(limit === "" || offset === "") return false
+
+  //making sure limit and offset values are numbers
   if (!Number.isInteger(Number(limit)) || !Number.isInteger(Number(offset))) return false
 
   // avoiding negative values
   if(Number(limit) < 0 || Number(offset) < 0) return false
   
   // valid limit value for corresponding offset
-
   if (Number(limit) + Number(offset) > maxLimit) return false
 
   return true
@@ -53,7 +56,7 @@ app.get("/api/orders", async (req, res) => {
   const _limit = req.query.limit
   const _offset = req.query.offset
   
-  // taking default values for incorrect limit and offset values
+  // taking default values for invalid limit and offset values
   const [limit, offset] = validate(_limit, _offset) ? [Number(_limit), Number(_offset)] : [10,0]
   const sql = "SELECT * FROM orders LIMIT ? OFFSET ?";
 
@@ -74,10 +77,7 @@ app.get("/api/orders", async (req, res) => {
 
 app.use(express.static('public'));
 
-// app.get('/', (req,res) => {
-//   res.sendFile(path.join(__dirname + '/public/index.html'))
-// })
-
+// response for invalid routes
 app.get('*', (req, res) => {
   res.status(404).json({ error: '404! Not Found' });
 })
